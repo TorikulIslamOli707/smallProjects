@@ -89,11 +89,15 @@ class MainActivity : AppCompatActivity() {
         val heightMM = heightCM / 100
         val bmi = weight / (heightMM * heightMM)
 
-        if (bmi > 25)
+        if (bmi > 25){
             resultTxtVar.text = "You're unhealthy"
-        else if (bmi < 18)
+            resultTxtVar.setBackgroundColor(resources.getColor(R.color.red))
+        }else if (bmi < 18) {
             resultTxtVar.text = "Your're underweight"
-        else
+            resultTxtVar.setBackgroundColor(resources.getColor(R.color.yellow))
+        }else {
             resultTxtVar.text = "You're healthy"
+            resultTxtVar.setBackgroundColor(resources.getColor(R.color.green))
+        }
     }
 }
